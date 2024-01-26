@@ -1,0 +1,19 @@
+<!-- person-list.component.html -->
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Telefono</th>
+        <th scope="col">Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let person of people">
+        <th scope="row">{{person.id}}</th>
+        <td>{{person.name}}</td>
+        <td>{{person.phone1}}</td>
+        <td>{{person.email}}</td>
+      </tr>
+    </tbody>
+  </table>
