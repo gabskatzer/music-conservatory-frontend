@@ -18,4 +18,16 @@ export class PeopleListComponent {
       error => console.error('Error fetching people data', error)
     );
   }
+
+  deletePerson(id: number): void {
+    this.peopleService.deletePerson(id).subscribe(
+      (response) => {
+        console.log('Person deleted successfully:', response);
+        // Optionally, you can perform additional actions upon successful deletion
+      },
+      (error) => {
+        console.error('Error deleting person:', error);
+      }
+    );
+  }
 }

@@ -18,4 +18,8 @@ export class PeopleService {
   createPerson(personData: any): Observable<any> {
     return this.http.post(`${this.apiUrl}`, personData);
   }
+
+  deletePerson(id: number): Observable<any> {
+    return this.http.delete(`${this.apiUrl}/${id}`);
+  }
 }

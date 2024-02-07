@@ -32,8 +32,6 @@ export class CreatePersonComponent {
   }
 
   onSubmit(form: FormGroup) {
-    console.log(form.value.dateOfBirth);
-    console.log("hey" + `${form.value.dateOfBirth.year}-${form.value.dateOfBirth.month}-${form.value.dateOfBirth.day}`);
     const jsDate = new Date(form.value.dateOfBirth.year, form.value.dateOfBirth.month - 1, form.value.dateOfBirth.day);
     const personData = {
       name: form.value.name,
