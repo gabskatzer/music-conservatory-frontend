@@ -1,0 +1,13 @@
+.box {
+    padding: 1.5rem;
+    margin-right: 0;
+    margin-left: 0;
+    border-width: 0.2rem;
+}
+.form-group {
+    margin-bottom: 1rem;
+}
+label {
+    display: inline-block;
+    margin-bottom: 0.5rem;
+}

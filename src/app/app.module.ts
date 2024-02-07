@@ -7,18 +7,22 @@ import { PeopleListComponent } from './components/people-list/people-list.compon
 import { CreatePersonComponent } from './components/create-person/create-person.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NavbarComponent } from './navbar/navbar.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     PeopleListComponent,
-    CreatePersonComponent
+    CreatePersonComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    NgbModule
+    NgbModule,
+    ReactiveFormsModule
   ],
   providers: [
     provideClientHydration()
