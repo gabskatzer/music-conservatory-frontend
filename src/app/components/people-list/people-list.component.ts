@@ -23,10 +23,25 @@ export class PeopleListComponent {
     this.peopleService.deletePerson(id).subscribe(
       (response) => {
         console.log('Person deleted successfully:', response);
-        // Optionally, you can perform additional actions upon successful deletion
       },
       (error) => {
         console.error('Error deleting person:', error);
+      }
+    );
+  }
+
+  updatePerson(): void {
+    // Implement logic to get updated person data from form
+    const updatedData = {/* Get updated data from form */};
+    const id = 1; // Example: Person ID to update
+
+    this.peopleService.updatePerson(id, updatedData).subscribe(
+      (response) => {
+        console.log('Person updated successfully:', response);
+        // Optionally, you can perform additional actions upon successful update
+      },
+      (error) => {
+        console.error('Error updating person:', error);
       }
     );
   }

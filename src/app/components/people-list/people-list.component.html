@@ -1,5 +1,9 @@
 <!-- person-list.component.html -->
-<div class="ml-1">
+<div class="main-box">
+  <div class="form-outline" data-mdb-input-init>
+    <input type="search" id="form1" class="form-control" placeholder="Buscar" aria-label="Search" />
+  </div>
+  <div class="ml-1">
     <table class="table table-striped">
         <thead>
           <tr>
@@ -18,8 +22,10 @@
             <td>{{person.phone1}}</td>
             <td>{{person.email}}</td>
             <td>{{person.address}}</td>
-            <td><button type="button" class="btn btn-info">Editar</button><button type="button" class="btn btn-danger" (click)="deletePerson(person.id)">Eliminar</button></td>
+            <td><button type="button" class="btn btn-info edit-table">Editar</button><button type="button" class="btn btn-danger" (click)="deletePerson(person.id)">Eliminar</button></td>
           </tr>
         </tbody>
       </table>
 </div>
+</div>
+

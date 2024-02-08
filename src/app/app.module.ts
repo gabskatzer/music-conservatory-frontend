@@ -9,13 +9,17 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { LoginComponent } from './login/login.component';
+import { CreateInstrumentComponent } from './create-instrument/create-instrument.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PeopleListComponent,
     CreatePersonComponent,
-    NavbarComponent
+    NavbarComponent,
+    LoginComponent,
+    CreateInstrumentComponent
   ],
   imports: [
     BrowserModule,
