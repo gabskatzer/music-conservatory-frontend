@@ -7,10 +7,11 @@ import { PeopleListComponent } from './components/people-list/people-list.compon
 import { CreatePersonComponent } from './components/create-person/create-person.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { NavbarComponent } from './navbar/navbar.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { LoginComponent } from './login/login.component';
-import { CreateInstrumentComponent } from './create-instrument/create-instrument.component';
+import { LoginComponent } from './components/login/login.component';
+import { CreateInstrumentComponent } from './components/create-instrument/create-instrument.component';
+import { HomeComponent } from './components/home/home.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { CreateInstrumentComponent } from './create-instrument/create-instrument
     CreatePersonComponent,
     NavbarComponent,
     LoginComponent,
-    CreateInstrumentComponent
+    CreateInstrumentComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
