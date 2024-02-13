@@ -1,5 +1,5 @@
 <div class="box">
-    <form [formGroup]="form" (ngSubmit)="onSubmit(form)">
+    <form [formGroup]="form" (ngSubmit)="updatePerson(form)">
         <div class="form-row">
           <div class="form-group col-md-6">
             <label for="inputEmail4">Nombre</label>
@@ -40,7 +40,7 @@
             <label for="inputPhone2">Telefono secundario</label>
             <input type="text" class="form-control" id="inputPhone2" placeholder="telefono secundario" formControlName="phone2">
           </div>
-        <button type="submit" class="btn btn-outline-dark">Salvar</button>
+        <button type="submit" class="btn btn-outline-dark">Actualizar</button>
       </form>
 </div>
 

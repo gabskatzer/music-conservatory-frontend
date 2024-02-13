@@ -15,6 +15,11 @@ export class PeopleService {
   getAllPeople(): Observable<Person[]> {
     return this.http.get<Person[]>(this.apiUrl);
   }
+
+  getPersonById(id: number): Observable<Person> {
+    return this.http.get<Person>(`${this.apiUrl}/${id}`);
+  }
+
   createPerson(personData: any): Observable<any> {
     return this.http.post(`${this.apiUrl}`, personData);
   }

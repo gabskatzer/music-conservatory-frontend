@@ -7,11 +7,14 @@ import { PeopleListComponent } from './components/people-list/people-list.compon
 import { CreatePersonComponent } from './components/create-person/create-person.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './components/login/login.component';
 import { CreateInstrumentComponent } from './components/create-instrument/create-instrument.component';
 import { HomeComponent } from './components/home/home.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { UpdatePersonComponent } from './components/update-person/update-person.component';
+import { CreateClassComponent } from './components/create-class/create-class.component';
+import { CreateCourseComponent } from './components/create-course/create-course.component';
 
 @NgModule({
   declarations: [
@@ -21,14 +24,18 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     NavbarComponent,
     LoginComponent,
     CreateInstrumentComponent,
-    HomeComponent
+    HomeComponent,
+    UpdatePersonComponent,
+    CreateClassComponent,
+    CreateCourseComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     NgbModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [
     provideClientHydration()

@@ -7,7 +7,7 @@ export interface Person{
     address: string;
     occupation: string;
     image: string;
-    dateOfBirth: Date;
+    dob: number;
     phone1: number;
     phone2: number;
 

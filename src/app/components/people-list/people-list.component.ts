@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Person } from '../../models/person';
 import { PeopleService } from '../../services/people.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-people-list',
@@ -9,6 +10,7 @@ import { PeopleService } from '../../services/people.service';
 })
 export class PeopleListComponent {
   people: Person[] = new Array();
+  searchText: string = '';
 
   constructor(private peopleService: PeopleService){}
 
@@ -19,9 +21,16 @@ export class PeopleListComponent {
     );
   }
 
+  search(): void {
+    this.people = this.people.filter(item =>
+      item.name.toLowerCase().includes(this.searchText.toLowerCase())
+    );
+  }
+
   deletePerson(id: number): void {
     this.peopleService.deletePerson(id).subscribe(
       (response) => {
+        this.people = this.people.filter( x => x.id != id);
         console.log('Person deleted successfully:', response);
       },
       (error) => {
@@ -30,19 +39,5 @@ export class PeopleListComponent {
     );
   }
 
-  updatePerson(): void {
-    // Implement logic to get updated person data from form
-    const updatedData = {/* Get updated data from form */};
-    const id = 1; // Example: Person ID to update
-
-    this.peopleService.updatePerson(id, updatedData).subscribe(
-      (response) => {
-        console.log('Person updated successfully:', response);
-        // Optionally, you can perform additional actions upon successful update
-      },
-      (error) => {
-        console.error('Error updating person:', error);
-      }
-    );
-  }
+  
 }

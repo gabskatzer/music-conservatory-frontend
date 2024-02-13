@@ -4,12 +4,17 @@ import { PeopleListComponent } from './components/people-list/people-list.compon
 import { CreatePersonComponent } from './components/create-person/create-person.component';
 import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './components/home/home.component';
+import { CreateInstrumentComponent } from './components/create-instrument/create-instrument.component';
+import { UpdatePersonComponent } from './components/update-person/update-person.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent ,
       children: [
         { path: 'peoplelist', component: PeopleListComponent },
-        { path: 'createperson', component: CreatePersonComponent}
+        { path: 'createperson', component: CreatePersonComponent},
+        { path: 'updateperson/:id', component: UpdatePersonComponent},
+        { path: 'createinstrument', component: CreateInstrumentComponent},
+
       ]
 },
   { path: '', component: LoginComponent }
