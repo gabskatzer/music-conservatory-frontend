@@ -43,11 +43,11 @@ export class UpdatePersonComponent {
       data => {
         console.log(data);
         var d = new Date(data.dob);
-        console.log("hey", {year: d.getFullYear(), month: d.getMonth(), day: d.getDay()});
+        console.log("hey", {year: d.getFullYear(), month: d.getMonth(), day: d.getDate()});
         this.form = new FormGroup({
           name: new FormControl(data.name),
           email: new FormControl(data.email),
-          dateOfBirth: new FormControl({year: d.getFullYear(), month: d.getMonth()+1, day: d.getDay()+1}),
+          dateOfBirth: new FormControl({year: d.getFullYear(), month: d.getMonth()+1, day: d.getDate()}),
           occupation: new FormControl(data.occupation),
           address: new FormControl(data.address),
           phone1: new FormControl(data.phone1),
@@ -66,13 +66,10 @@ export class UpdatePersonComponent {
 
   
   onDateSelect(event: any): void {
-
-    // Handle date selection
     console.log('Selected date:', event);
   }
 
   updatePerson(form: FormGroup): void {
-    // Implement logic to get updated person data from form
     const jsDate = new Date(form.value.dateOfBirth.year, form.value.dateOfBirth.month - 1, form.value.dateOfBirth.day);
 
     const personData = {
@@ -88,13 +85,12 @@ export class UpdatePersonComponent {
     const updatedData = {
 
     };
-    const id = 1; // Example: Person ID to update
+    const id = this.id;
 
     this.peopleService.updatePerson(id, personData).subscribe(
       (response) => {
         console.log('Person updated successfully:', response);
         this.router.navigate(['/home/peoplelist']);
-        // Optionally, you can perform additional actions upon successful update
       },
       (error) => {
         console.error('Error updating person:', error);
