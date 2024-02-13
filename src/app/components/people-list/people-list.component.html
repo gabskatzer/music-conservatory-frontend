@@ -22,7 +22,10 @@
             <td>{{person.phone1}}</td>
             <td>{{person.email}}</td>
             <td>{{person.address}}</td>
-            <td><button type="button" class="btn btn-info edit-table" [routerLink]="['/home/updateperson', person.id]" >Editar</button><button type="button" class="btn btn-danger" (click)="deletePerson(person.id)">Eliminar</button></td>
+            <td>
+              <button type="button" class="btn btn-info edit-table bi bi-pencil-square" [routerLink]="['/home/updateperson', person.id]" ></button>
+              <button type="button" class="btn btn-danger bi bi-trash" (click)="deletePerson(person.id)"></button>
+            </td>
           </tr>
         </tbody>
       </table>
