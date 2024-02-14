@@ -53,12 +53,6 @@ export class UpdatePersonComponent {
           phone1: new FormControl(data.phone1),
           phone2: new FormControl(data.phone2),
         });
-        // this.form.value.name= data.name,
-        // this.form.value.email= data.email,
-        // this.form.value.occupation= data.occupation,
-        // this.form.value.address= data.address,
-        // this.form.value.phone1= data.phone1,
-        // this.form.value.phone2
       },
       error => console.error('Error fetching person', error)
     );

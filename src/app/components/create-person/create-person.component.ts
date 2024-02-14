@@ -50,7 +50,7 @@ export class CreatePersonComponent {
       (response) => {
         console.log('Person created successfully:', response);
         this.router.navigate(['/home/peoplelist'])
-        // Optionally, you can redirect to a different page or perform other actions upon success.
+       
       },
       (error) => {
         console.error('Error creating person:', error);
