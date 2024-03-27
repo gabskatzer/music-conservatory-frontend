@@ -1,5 +1,8 @@
 <div class="main-box">
-    <a routerLink="/home/createperson">Nuevo Registro</a>
+    <div class="mb-3">
+      <button type="button" class="btn btn-dark bi bi-person-plus" [routerLink]="['/home/createperson']">  Nuevo Registro</button>
+    </div>
+    
   <div class="form-outline" data-mdb-input-init>
     <input type="text" id="form1" class="form-control" placeholder="Buscar" aria-label="Search" [(ngModel)]="searchText" (input)="search()" />
   </div>

@@ -27,6 +27,12 @@ export class CreatePersonComponent {
       address: new FormControl(''),
       phone1: new FormControl(''),
       phone2: new FormControl(''),
+      relationship: new FormControl(''),
+      educationalLevel: new FormControl(''),
+      studentType: new FormControl(''),
+      professor: new FormControl(false),
+      student: new FormControl(true),
+      commissioned: new FormControl(false)
     });
     this.selectedDate = this.calendar.getToday();
     this.minDate = { year: 1930, month: 1, day: 1 };
@@ -44,7 +50,13 @@ export class CreatePersonComponent {
       address: form.value.address+"",
       phone1: Number(form.value.phone1),
       phone2: Number(form.value.phone2),
-      active:true
+      active:true,
+      relationship: form.value.relationship,
+      educationalLevel: form.value.educationalLevel,
+      studentType: form.value.studentType,
+      professor: form.value.professor,
+      student: form.value.student,
+      commissioned: form.value.commissioned
     };
     this.peopleService.createPerson(personData).subscribe(
       (response) => {
@@ -63,4 +75,5 @@ export class CreatePersonComponent {
     // Handle date selection
     console.log('Selected date:', event);
   }
+
 }
