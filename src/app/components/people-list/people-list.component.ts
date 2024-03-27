@@ -10,19 +10,20 @@ import { Router } from '@angular/router';
 })
 export class PeopleListComponent {
   people: Person[] = new Array();
+  allPeople: Person[] = new Array();
   searchText: string = '';
 
   constructor(private peopleService: PeopleService){}
 
   ngOnInit(): void {
     this.peopleService.getAllPeople().subscribe(
-      data => {console.log(data);this.people = data;},
+      data => {console.log(data);this.allPeople = data; this.people = data;},
       error => console.error('Error fetching people data', error)
     );
   }
 
   search(): void {
-    this.people = this.people.filter(item =>
+    this.people = this.allPeople.filter(item =>
       item.name.toLowerCase().includes(this.searchText.toLowerCase())
     );
   }

@@ -8,7 +8,7 @@ import { Person } from '../models/person';
 })
 export class PeopleService {
 
-  private apiUrl = 'http://localhost:8090/api/students'; // Replace with your Spring Boot API URL
+  private apiUrl = 'http://localhost:8090/api/people'; // Replace with your Spring Boot API URL
 
   constructor(private http: HttpClient) { }
 

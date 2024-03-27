@@ -10,5 +10,10 @@ export interface Person{
     dob: number;
     phone1: number;
     phone2: number;
-
+    relationship: string;
+    educationalLevel: string;
+    studentType: string;
+    professor: boolean;
+    student: boolean;
+    commissioned: boolean;
 }
