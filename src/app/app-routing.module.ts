@@ -6,6 +6,7 @@ import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './components/home/home.component';
 import { CreateInstrumentComponent } from './components/create-instrument/create-instrument.component';
 import { UpdatePersonComponent } from './components/update-person/update-person.component';
+import { InstrumentsListComponent } from './instruments-list/instruments-list.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent ,
@@ -13,6 +14,7 @@ const routes: Routes = [
         { path: 'peoplelist', component: PeopleListComponent },
         { path: 'createperson', component: CreatePersonComponent},
         { path: 'updateperson/:id', component: UpdatePersonComponent},
+        { path: 'instrumentslist', component: InstrumentsListComponent},
         { path: 'createinstrument', component: CreateInstrumentComponent},
 
       ]

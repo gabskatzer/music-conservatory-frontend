@@ -15,6 +15,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { UpdatePersonComponent } from './components/update-person/update-person.component';
 import { CreateClassComponent } from './components/create-class/create-class.component';
 import { CreateCourseComponent } from './components/create-course/create-course.component';
+import { InstrumentsListComponent } from './instruments-list/instruments-list.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { CreateCourseComponent } from './components/create-course/create-course.
     HomeComponent,
     UpdatePersonComponent,
     CreateClassComponent,
-    CreateCourseComponent
+    CreateCourseComponent,
+    InstrumentsListComponent
   ],
   imports: [
     BrowserModule,
