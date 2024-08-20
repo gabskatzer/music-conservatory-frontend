@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { InstrumentService } from '../../services/instrument.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-create-instrument',
@@ -8,19 +10,30 @@ import { FormControl, FormGroup } from '@angular/forms';
 })
 export class CreateInstrumentComponent {
 
-  form: FormGroup = new FormGroup({});
+  form: FormGroup;
 
-  constructor(){
+  constructor(private instrumentService: InstrumentService, private router: Router){
     this.form = new FormGroup({
       name: new FormControl(''),
+      individual: new FormControl("", Validators.required)
     });
   }
 
-  onSubmit(form: FormControl){
+  onSubmit(form: FormGroup){
+    console.log(form.value.individual)
     const instrumentData = {
-      name: form.value.name
+      name: form.value.name+"",
+      individual: form.value.individual
     };
-    
+    this.instrumentService.createInstrument(instrumentData).subscribe(
+      (response)=> {
+        console.log('Instrument created successfully: ', response);
+        this.router.navigate(['/home/instrumentslist'])
+      },
+      (error) => {
+        console.log('Error creating instrument', error);
+      }
+    )
   }
 
 }

@@ -19,4 +19,10 @@ export class InstrumentService {
   deleteInstrument(id: number): Observable<any> {
     return this.http.delete(`${this.apiUrl}/${id}`);
   }
+
+  createInstrument(instrumentData: any): Observable<any>{
+    return this.http.post(`${this.apiUrl}`, instrumentData);
+  }
+
+  
 }

@@ -1,6 +1,6 @@
 <div class="main-box">
     <div class="mb-3">
-      <button type="button" class="btn btn-dark bi bi-person-plus" [routerLink]="['/home/createperson']">  Nuevo Instrumento</button>
+      <button type="button" class="btn btn-dark bi bi-person-plus" [routerLink]="['/home/createinstrument']">  Nuevo Instrumento</button>
     </div>
     
   <div class="form-outline" data-mdb-input-init>
@@ -17,9 +17,9 @@
         <tbody>
           <tr *ngFor="let instrument of instruments">
             <th scope="row">{{instrument.name}}</th>
-            <td>{{instrument.individual}}</td>
+            <td>{{instrument.individual ? 'Individual': 'Grupal'}}</td>
             <td>
-              <button type="button" class="btn btn-info edit-table bi bi-pencil-square"></button>
+              <!-- <button type="button" class="btn btn-info edit-table bi bi-pencil-square"></button> -->
               <button type="button" class="btn btn-danger bi bi-trash" (click)="deleteInstrument(instrument.id)"></button>
             </td>
           </tr>
