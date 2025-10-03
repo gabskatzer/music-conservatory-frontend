@@ -7,9 +7,10 @@ import { HomeComponent } from './components/home/home.component';
 import { CreateInstrumentComponent } from './components/create-instrument/create-instrument.component';
 import { UpdatePersonComponent } from './components/update-person/update-person.component';
 import { InstrumentsListComponent } from './instruments-list/instruments-list.component';
+import { AuthGuard } from './guards/authGuard';
 
 const routes: Routes = [
-  { path: 'home', component: HomeComponent ,
+  { path: 'home', component: HomeComponent , //canActivate: [AuthGuard],
       children: [
         { path: 'peoplelist', component: PeopleListComponent },
         { path: 'createperson', component: CreatePersonComponent},
@@ -19,7 +20,7 @@ const routes: Routes = [
 
       ]
 },
-  { path: '', component: LoginComponent }
+  { path: 'login', component: LoginComponent }
 ];
 
 @NgModule({
